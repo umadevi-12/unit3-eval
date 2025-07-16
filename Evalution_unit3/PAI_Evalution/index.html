@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickCart</title>
+    <link rel = "stylesheet" href = 'style.css'/>
+
+</head>
+<body>
+    <h1>QuickCart : Shopping List</h1>
+    <form id = "add-item-form">
+        <input id = 'item-name' type = 'text' placeholder="Item Name" required />
+        <inpur id = 'item-qty' type = 'number' min = '1' value = '1' required />
+        <input id = 'item-price' type = 'number' min = '0.01' placeholder="Price" required/>
+        <select id = 'item-category' required>
+            <option value = ''>Select Category</option>
+            <option value = Dairy>Dairy</option>
+            <option value = 'Produce'>Produce</option>
+            <option value = 'Snacks'>Snacks</option>
+        </select>
+        <button type = 'submit'>Add Item</button>
+
+    </form>
+    <div id = 'filters'>
+        <button data-filter="All">All</button>
+        <button data-filter="Dairy">Dairy</button>
+        <button data-filter="Produce">Produce</button>
+        <button data-filter="Snacks">Snacks</button>
+    </div>
+    <div id = 'totals'>
+        <span id = 'total-items'>Total Items: 0</span>|
+        <span id = 'grand-cost'>Grand Cost : $0.00</span>
+    </div>
+
+    <ul id = 'item-list'></ul>
+        <div id = 'undo-toast' style="display: none;">
+            Item deleted.<button id = 'undo-btn'>Undo</button>
+        </div>
+        <script src = "https://www.gstatic.com/firebasejs/11.10.0/firebase-app-compat.js"></script>
+        <script src = " https://quickcart-4baaa-default-rtdb.asia-southeast1.firebasedatabase.app.js"></script>
+        <script src = app.js></script>
+    
+    
+</body>
+</html>
